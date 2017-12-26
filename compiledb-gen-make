@@ -61,6 +61,6 @@ while (( $# )); do
     shift
 done
 
-make -Bnkw "${make_opts[@]}" | $parser_cmd "${parser_opts[@]}"
+make -nkw "${make_opts[@]}" | tee /dev/stderr |$parser_cmd "${parser_opts[@]}"
 
 # ex: ts=1 sw=4 et filetype=sh
